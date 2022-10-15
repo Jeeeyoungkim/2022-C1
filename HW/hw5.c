@@ -7,17 +7,17 @@ int main(void){
 
     printf("Please enter a number : ");
     scanf("%d", &num);
+    mod(num);
 
-    TentoTwo(num);
+    printf("\n");
     return 0;
 }
 
-int TentoTwo(int n)
-{
-	int result = n % 2;
-	n /= 2; // n = n/2 (n을 2 값으로 나눈 몫) 
-	if (n > 0) // ex) 1 /= 2 --> 몫(n) = 0, n>0 조건 만족 X --> 조건문 빠져나오게 됨. 
-		TentoTwo(n); // 재귀함수
-	printf("%d", result);
-	return 0;
+void mod(int num){
+    if (num == 0) //몫이 0이면 종료
+        return ;
+    else {
+        mod(num/2); //1보다크면 나머지 출력
+        printf("%d ", num%2);
+    }
 }
