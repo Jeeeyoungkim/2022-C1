@@ -1,22 +1,24 @@
 #include <stdio.h>
 
 int main(void){
-    int num;
-    int count = 0;
+    int num[5];
+    int OddNum[5], EvenNum[5];
+    int i = 0;
 
-    printf("Please enter a number : ");
-    scanf("%d", &num);
 
-    for (int i = 2; i <= num; i++){
-        if (num % i == 0){
-            count++;
-        } 
+    printf("Please input five integers: ");
+    while(i<5) {
+        scanf("%d", &num[i]);
+        i++;
     }
-    
-    if (count == 1) {
-        printf("It is a prime number\n");
-    } else {
-        printf("It is not a prime number\n");
-    }
+
+    for (int j=0; j<sizeof(num)/sizeof(int); j++){
+        printf("%d ", num[j]);
+        if(num[j]%2 == 0) {
+            
+          }
+
+    printf("\n");
+
     return 0;
 }
